@@ -80,18 +80,6 @@ void Show2dArray(int[,] array)
     Console.WriteLine();
 }
 
-bool NumberSearch(int number, int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for(int j = 0; j < array.GetLength(1); j++)
-        {
-            if(array[i,j] == number) return true;
-            else return number;
-        }
-    }
-}
-
 
 Console.Write("Input number of rows: ");
 int m = Convert.ToInt32(Console.ReadLine());
@@ -103,9 +91,30 @@ int num = Convert.ToInt32(Console.ReadLine());
 int[,] array = GreateRandon2dArray(m, n);
 Show2dArray(array);
 
-bool result = NumberSearch(num, array);
-Console.Write(result);
+// Находим число:
+
+bool IsFinde = false; // Если найдём число, то будет истина
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        if(array[i, j] == num)
+        {
+            IsFinde = true;
+        }
+    }
+}
+if (IsFinde)
+{
+    Console.WriteLine(num + " - число найдено в массиве.");
+}
+else
+{
+    Console.WriteLine(num + " - число не найдено.");
+}
+Console.WriteLine();
 */
+
 
 
 
